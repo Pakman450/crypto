@@ -4,6 +4,7 @@ import sys
 import os
 import argparse
 import time
+from lido.rewards import convert_csv as cc
 
 
 
@@ -46,9 +47,10 @@ if args.verbose:
 
 
 if (args.subcommand == "lido_rew"):
-    input_mol2  = kwargs['input']
+    input_csv  = kwargs['input']
     output_name = kwargs['name_csv']
     #read in the input csv file
+    cc.convert_csv(input_csv)
     
 
 
