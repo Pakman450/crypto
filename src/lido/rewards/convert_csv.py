@@ -18,10 +18,10 @@ def convert_csv(input_csv):
         text =raw_text.split(' ', 6)[0:6]
         input_text=" ".join(text[:len(text)])
         new_date = datetime.datetime.strptime(input_text,"%a %b %d %Y %H:%M:%S %Z%z")
-        row = [df['type'][ind],df['change'][ind],'STETH',0.00,'',0.00,'','Ledger Live','LIDO staking rewards','LIDO staking rewards',new_date]
+        row = ["Staking",df['change'][ind],'STETH',0.00,'',0.00,'','Ledger Live','LIDO staking rewards','LIDO staking rewards',new_date]
         data.append(row)
     dfout = pd.DataFrame(data,columns=columns_names)
-    print(dfout)
+    dfout.to_csv('file1.csv',index=False)
 
 
 
